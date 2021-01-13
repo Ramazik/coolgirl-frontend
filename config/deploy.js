@@ -29,7 +29,7 @@ module.exports = function (deployTarget) {
   if (deployTarget === 'production') {
     ENV.build.environment = 'production';
     // configure other plugins for production deploy target here
-    ENV.rootURL = '/coolgirl-frontend';
+    ENV.rootURL = '/coolgirl-frontend/';
     ENV.locationType = 'hash';
   }
 

@@ -21,8 +21,8 @@
     "lint:ts": "tsc --noEmit",
     "lint:eslint": "eslint . --ext .js,.ts",
     "lint-staged": "lint-staged",
-    "dev-new": "cross-env DOTENV=self-normal ember s --proxy https://new.coolgirl.clusterrr.com",
-    "deploy": "ember deploy production"
+    "dev-new": "cross-env DOTENV=self-dev ember s --proxy https://new.coolgirl.clusterrr.com",
+    "deploy": "cross-env DOTENV=new-prod ember deploy production"
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
