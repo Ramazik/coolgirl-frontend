@@ -1,7 +1,7 @@
-import JSONAPIAdapter from '@ember-data/adapter/json-api';
+import RESTAdapter from '@ember-data/adapter/rest';
 import config from 'coolgirl-frontend/config/environment';
 
-export default class Application extends JSONAPIAdapter {
+export default class ApplicationAdapter extends RESTAdapter {
   namespace = config.apiNamespace;
   host = config.apiHost;
 }
@@ -9,6 +9,6 @@ export default class Application extends JSONAPIAdapter {
 // DO NOT DELETE: this is how TypeScript knows how to look up your adapters.
 declare module 'ember-data/types/registries/adapter' {
   export default interface AdapterRegistry {
-    application: Application;
+    application: ApplicationAdapter;
   }
 }

@@ -1,0 +1,89 @@
+$gutter: 20px;
+$card-padding: 10px;
+$thumb-width: 256px;
+$thumb-height: 192px;
+
+
+.GameList_Cards {
+  // Layout
+  padding: $gutter 0;
+
+  // Content layout
+  .GameList_Cards-Group {
+    &:not(:last-child) {
+      margin-bottom: $gutter;
+    }
+  }
+}
+
+
+.GameList_Cards-Group {
+  // Content layout
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+
+  > *:not(:last-child) {
+    margin-right: $gutter;
+  }
+}
+
+
+
+.GameList_Cards-Card {
+  // Layout
+  width: $thumb-width + $card-padding * 2;
+  padding: $card-padding;
+
+  // Looks
+  background-color: lightgray;
+  border-radius: 5px;
+
+  // Content layout
+  .GameList_Cards-Card-Thumb {
+    margin-bottom: 10px;
+  }
+
+  .GameList_Cards-Card-Name {
+    margin-bottom: 10px;
+  }
+}
+
+
+
+.GameList_Cards-Card-Thumb {
+  // Layout
+  width: $thumb-width;
+  height: $thumb-height;
+}
+
+
+
+.GameList_Cards-Card-Game {
+  // Layout
+  padding: 5px;
+
+  // Content looks
+  display: flex;
+  align-items: center;
+
+  .GameList_Cards-Card-Game-Check {
+    flex-shrink: 0;
+    margin-right: 10px;
+  }
+  .GameList_Cards-Card-Game-Content {
+    flex-grow: 1;
+  }
+
+  // Behavior
+  &:hover {
+    background-color: white;
+  }
+}
+
+
+
+.GameList_Cards-Card-Desc {
+  // Text
+  font-size: 0.8em;
+}

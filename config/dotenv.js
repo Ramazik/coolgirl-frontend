@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const DEFAULT_DOTENV_NAME = 'mirage-normal';
+const DEFAULT_DOTENV_NAME = 'self-normal';
 
 module.exports = function (/* env */) {
   const dotenvName =
@@ -19,7 +19,7 @@ module.exports = function (/* env */) {
   return {
     clientAllowedKeys: [],
     // Fail build when there is missing any of clientAllowedKeys environment variables.
-    // By default false.
+    // By default false.eE
     failOnMissingKey: false,
     path: dotenvFileName,
   };

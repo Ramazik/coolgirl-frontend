@@ -1,0 +1,103 @@
+<ElementQuery
+  class="
+    GameList_Compact
+  "
+  ...attributes
+  as |EQ|
+>
+  <table
+    class="GameList_Compact-Table"
+  >
+    <colgroup>
+      <col class="GameList_Compact-Col _check">
+      <col class="GameList_Compact-Col _name">
+      <col class="GameList_Compact-Col _desc">
+      <col class="GameList_Compact-Col _lang">
+      <col class="GameList_Compact-Col _size">
+      <col class="GameList_Compact-Col _battery">
+    </colgroup>
+
+    {{!-- <thead>
+      <tr class="GameList_Compact-Row _header">
+        <th class="GameList_Compact-Cell _header _check">
+        </th>
+
+        <th class="GameList_Compact-Cell _header _name">
+          {{t "component.game-list_compact.fields.name"}}
+        </th>
+
+        <th class="GameList_Compact-Cell _header _lang">
+          {{t "component.game-list_compact.fields.name"}}
+        </th>
+      </tr>
+    </thead> --}}
+
+    <VerticalCollection
+      @items={{this.games.gameWrappers}}
+      @tagName="tbody"
+      @key="name"
+
+      @estimateHeight={{or
+        (and EQ.to-xs 89)
+        (and EQ.from-l 31)
+        48
+      }}
+
+      @containerSelector="body"
+      @bufferSize={{5}}
+      as |gameWrapper index|
+    >
+      <tr class="GameList_Compact-Row _body _{{oddity index}}">
+        <td class="GameList_Compact-Cell _body _check">
+          <input
+            type="checkbox"
+            checked={{gameWrapper.isSelected}}
+            {{on "change" gameWrapper.toggle}}
+          >
+        </td>
+
+        <td class="GameList_Compact-Cell _body _name">
+          <p class="GameList_Compact-Name">
+            {{gameWrapper.name}}
+          </p>
+
+          <p class="GameList_Compact-Desc">
+            {{gameWrapper.game.description}}
+          </p>
+        </td>
+
+        <td class="GameList_Compact-Cell _body _desc">
+          <p
+            class="GameList_Compact-Desc"
+            title={{gameWrapper.game.description}}
+          >
+            {{gameWrapper.game.description}}
+          </p>
+        </td>
+
+        <td class="GameList_Compact-Cell _body _lang">
+          <GameList::Lang
+            @lang={{gameWrapper.game.language}}
+          />
+        </td>
+
+        <td class="GameList_Compact-Cell _body _size">
+          <p
+            class="GameList_Compact-Size"
+          >
+            {{! template-lint-disable no-bare-strings}}
+            {{gameWrapper.game.size}} KB
+          </p>
+        </td>
+
+        <td class="GameList_Compact-Cell _body _battery">
+          <p
+            class="GameList_Compact-Battery"
+          >
+            {{if gameWrapper.game.battery "🔋"}}
+          </p>
+        </td>
+      </tr>
+    </VerticalCollection>
+  </table>
+</ElementQuery>

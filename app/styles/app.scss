@@ -1,22 +1,24 @@
-// Variables
-@import "./config/colors";
-@import "./config/dimensions";
-@import "./config/transitions";
-
-
-// Utils
-@import "./utils/sizes";
-@import "./utils/layout";
-
-
-// Bootstrap Base
-@import "./config/bootstrap";
-@import "ember-bootstrap/bootstrap";
+// Third party
+// @use "app/styles/bootstrap";
 
 
 // HTML Class (Single Element) Components
-@import "./html-class-components/tags";
+@use "app/styles/html-class-components/reset";
+@use "app/styles/html-class-components/themes";
+@use "app/styles/html-class-components/tags";
 
 
-// Components and pages
-@import 'modules';
+// Components
+@use "app/components/game-list/cards";
+@use "app/components/game-list/compact";
+@use "app/components/game-list/thumbs";
+
+
+
+// Pages
+@use "app/pods/application/styles" as page-application;
+@use "app/pods/games/styles" as page-games;
+
+
+
+// Addons & Overrides

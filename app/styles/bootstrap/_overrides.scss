@@ -1,0 +1,33 @@
+.form-check {
+  input[type="checkbox"] {
+    cursor: pointer;
+
+    ~ label {
+      cursor: pointer;
+    }
+  }
+}
+
+
+
+.radio {
+  display: flex;
+  flex-wrap: wrap;
+
+  > *:not(:first-child):not(.invalid-feedback) {
+    margin-left: 1.2rem;
+  }
+
+  .invalid-feedback {
+    display: block;
+    width: 100%;
+  }
+
+  input:not(:checked) {
+    cursor: pointer;
+
+    ~ label {
+      cursor: pointer;
+    }
+  }
+}
