@@ -5,27 +5,21 @@ import CredentialsError from './errors/credentials';
 import HttpResponseError from './errors/http-response';
 import NotFoundError from './errors/not-found';
 import OfflineError from './errors/offline';
-import AdapterError, {
-  UnauthorizedError as DataUnauthorizedError,
-  ForbiddenError as DataForbiddenError,
-  NotFoundError as DataNotFoundError,
-  ServerError as DataServerError,
-} from '@ember-data/adapter/error';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
-const ErrorMapping: [Function, string][] = [
-  [DataUnauthorizedError, 'unauthorized'],
-  [DataForbiddenError, 'forbidden'],
-  [DataNotFoundError, 'not_found'],
-  [DataServerError, 'server_error'],
-];
+// const ErrorMapping: [Function, string][] = [
+//   [DataUnauthorizedError, 'unauthorized'],
+//   [DataForbiddenError, 'forbidden'],
+//   [DataNotFoundError, 'not_found'],
+//   [DataServerError, 'server_error'],
+// ];
 
 export type AnyError =
   | EmberError
-  | DataUnauthorizedError
-  | DataForbiddenError
-  | DataNotFoundError
-  | DataServerError
+  // | DataUnauthorizedError
+  // | DataForbiddenError
+  // | DataNotFoundError
+  // | DataServerError
   | AccessDeniedError
   | CredentialsError
   | HttpResponseError
@@ -46,15 +40,15 @@ export function errorTranslationKey(
   }
 
   // check if error is an ember-data error with a known mapping
-  if (error instanceof AdapterError) {
-    const found = ErrorMapping.find(([klass]) => error instanceof klass);
-    if (found) {
-      key = `${keyPrefix}.${found[1]}`;
-      if (intl.exists(key)) {
-        return key;
-      }
-    }
-  }
+  // if (error instanceof AdapterError) {
+  //   const found = ErrorMapping.find(([klass]) => error instanceof klass);
+  //   if (found) {
+  //     key = `${keyPrefix}.${found[1]}`;
+  //     if (intl.exists(key)) {
+  //       return key;
+  //     }
+  //   }
+  // }
 
   // try translation of error.messageKey
   if ('messageKey' in error) {

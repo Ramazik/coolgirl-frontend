@@ -140,7 +140,8 @@
     "edition": "octane"
   },
   "resolutions": {
-    "ember-cli-version-checker": "^4.0.0"
+    "ember-cli-version-checker": "^4.0.0",
+    "ember-window-mock": "^0.7.1"
   },
   "volta": {
     "node": "12.18.2",
