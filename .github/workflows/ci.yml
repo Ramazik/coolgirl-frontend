@@ -140,14 +140,6 @@ jobs:
     name: Test app
     needs: [build-app]
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: true
-      matrix:
-        partition:
-          - 1
-          - 2
-          - 3
-          - 4
     timeout-minutes: 7
     steps:
       - name: Check out a copy of the repo
@@ -183,13 +175,10 @@ jobs:
           path: dist
 
       - name: Test
-        uses: percy/exec-action@v0.3.1
-        with:
-          custom-command: yarn test:ember --partition=${{ matrix.partition }} --path=dist
+        run: yarn test
         env:
-          PERCY_PARALLEL_NONCE: ${{ env.PERCY_PARALLEL_NONCE }}
-          PERCY_PARALLEL_TOTAL: ${{ env.PERCY_PARALLEL_TOTAL }}
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          CI: true
+
 
 
   deploy-app:
