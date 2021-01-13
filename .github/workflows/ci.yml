@@ -50,9 +50,9 @@ on:
     branches:
       - develop
   pull_request:
-  # schedule:
-  #   # Run the workflow every Monday at 6 am CST
-  #   - cron: '0 11 * * MON'
+  schedule:
+    # Run the workflow every Monday at 6 am CST
+    - cron: '0 11 * * MON'
 
 env:
   NODE_VERSION: 14
@@ -186,8 +186,8 @@ jobs:
     needs: [lint, test-app]
     runs-on: ubuntu-latest
     timeout-minutes: 7
-    # Only run on pushes to main branch that aren't from the cron workflow
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && contains(github.ref, 'cron') != true
+    # Only run on pushes to develop branch that aren't from the cron workflow
+    if: github.event_name == 'push' && github.ref == 'refs/heads/develop' && contains(github.ref, 'cron') != true
     steps:
       - name: Check out a copy of the repo
         uses: actions/checkout@v2
