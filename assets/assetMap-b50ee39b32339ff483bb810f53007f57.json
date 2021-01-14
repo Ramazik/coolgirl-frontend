@@ -2,9 +2,9 @@
   "assets": {
     "assets/assetMap.json": "assets/assetMap-cd33192964e8c20af9391de38dbf449b.json",
     "assets/coolgirl-frontend.css": "assets/coolgirl-frontend-fddbf214109659ec5b0810a3f31e6384.css",
-    "assets/coolgirl-frontend.js": "assets/coolgirl-frontend-cef2f4920223e0614489799e2df09a2e.js",
+    "assets/coolgirl-frontend.js": "assets/coolgirl-frontend-2662297e7a7c5e84ccad473aad5b80db.js",
     "assets/vendor.css": "assets/vendor-d2c263e770ffe12eeee12b559bdf45ac.css",
-    "assets/vendor.js": "assets/vendor-1f7aa9f56d0d198062fd0b7232024dab.js"
+    "assets/vendor.js": "assets/vendor-c4c7b486f45a4e45b59447b5aec64841.js"
   },
   "prepend": "/"
 }
