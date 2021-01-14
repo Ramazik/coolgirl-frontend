@@ -8,6 +8,10 @@ page:
       games: Build a multicart
 
 
+  index:
+    title: Welcome.
+
+
   games:
     loading: Loading...
     failed: Loadig games failed.

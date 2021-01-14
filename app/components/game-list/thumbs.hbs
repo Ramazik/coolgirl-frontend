@@ -48,6 +48,7 @@
       @bufferSize={{5}}
       as |gameWrapper index|
     >
+    {{!-- {{#each this.games.gameWrappers as |gameWrapper|}} --}}
       <tr class="GameList_Thumbs-Row _body  _{{oddity index}}">
         <td class="GameList_Thumbs-Cell _body _check">
           <input
@@ -100,5 +101,6 @@
         </td>
       </tr>
     </VerticalCollection>
+    {{!-- {{/each}} --}}
   </table>
 </ElementQuery>

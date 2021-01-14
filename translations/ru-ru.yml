@@ -8,6 +8,10 @@ page:
       games: Собрать карик
 
 
+  index:
+    title: Добро пожаловать.
+
+
   games:
     loading: Загрузка...
     failed: Загрузка игр не удалась

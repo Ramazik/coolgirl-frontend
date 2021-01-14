@@ -19,6 +19,13 @@
     @bufferSize={{5}}
     as |gamesWrappers|
   >
+  {{!-- {{#each (group-by-eq
+      items=this.games.gamesWrappers
+      width=EQInfo.width
+      itemWidth=276
+      padding=20
+  )
+ as |gamesWrappers|}} --}}
     <div class="GameList_Cards-Group">
       {{#each gamesWrappers key="name" as |gamesWrapper|}}
         {{#let gamesWrapper.gameWrapperCurrent.game as |game|}}
@@ -83,6 +90,6 @@
         {{/let}}
       {{/each}}
     </div>
-
+  {{!-- {{/each}} --}}
   </VerticalCollection>
 </ElementQuery>
