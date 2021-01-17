@@ -2,6 +2,7 @@
   class="
     GameList_Cards
   "
+  data-test-cards-view
   ...attributes
   as |EQ EQInfo|
 >
@@ -31,26 +32,34 @@
         {{#let gamesWrapper.gameWrapperCurrent.game as |game|}}
           <div
             class="GameList_Cards-Card"
+            data-test-game-group
           >
             <img
               class="GameList_Cards-Card-Thumb"
+              data-test-screenshot
               src={{url game.screenshot}}
               alt={{game.name}}
               loading="lazy"
               {{img-loading game.screenshot}}
             >
 
-            <p class="GameList_Cards-Card-Name">
+            <p
+              class="GameList_Cards-Card-Name"
+              data-test-name
+            >
               {{game.name}}
             </p>
 
             <div class="GameList_Cards-Card-Games">
               {{#each gamesWrapper.gameWrappers as |gameWrapper|}}
-                <label class="GameList_Cards-Card-Game"
-                  {{on "mouseover" gameWrapper.setCurrent}}
+                <label
+                  class="GameList_Cards-Card-Game"
+                  data-test-game
+                  {{on "mouseenter" gameWrapper.setCurrent}}
                 >
                   <input
                     class="GameList_Cards-Card-Game-Check"
+                    data-test-checkbox
                     type="checkbox"
                     checked={{gameWrapper.isSelected}}
                     {{on "change" gameWrapper.toggle}}
@@ -64,13 +73,13 @@
                         @lang={{gameWrapper.game.language}}
                       />
 
-                      <span>
+                      <span data-test-size>
                         {{! template-lint-disable no-bare-strings}}
-                        {{gameWrapper.game.size}} KB
+                        {{t "page.games.size" size=gameWrapper.game.size}}
                       </span>
 
                       {{#if gameWrapper.game.battery}}
-                        <span>
+                        <span data-test-battery>
                           {{! template-lint-disable no-bare-strings}}
                           🔋
                         </span>
@@ -79,6 +88,7 @@
 
                     <p
                       class="GameList_Cards-Card-Desc"
+                      data-test-description
                     >
                       {{gameWrapper.game.description}}
                     </p>

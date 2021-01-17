@@ -21,6 +21,7 @@ page:
       compact: Compact
       thumbnails: Thumbs
       cards: Cards
+    size: "{size} KiB"
 
 
 

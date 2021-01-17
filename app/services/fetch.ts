@@ -6,8 +6,14 @@ import { dropTask } from 'ember-concurrency-decorators';
 import { taskFor } from 'ember-concurrency-ts';
 
 export default class FetchService extends Service {
+  get host(): string {
+    return config.environment === 'testing' || window.location.pathname === '/tests'
+      ? ''
+      : config.apiHost;
+  }
+
   get baseURL(): string {
-    return config.apiNamespace ? `${config.apiNamespace}/${config.apiHost}` : config.apiHost;
+    return config.apiNamespace ? `${this.host}/${config.apiNamespace}` : this.host;
   }
 
   _url(resource: string): string {

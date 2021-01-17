@@ -21,6 +21,7 @@ page:
       compact: Компакт
       thumbnails: Средне
       cards: Крупно
+    size: "{size} КиБ"
 
 
 

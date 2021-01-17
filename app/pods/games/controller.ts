@@ -12,6 +12,8 @@ enum ViewMode {
 }
 
 export default class Games extends Controller {
+  queryParams = [{ viewMode: 'view' }];
+
   @service fetch!: FetchService;
   @service games!: GamesService;
 

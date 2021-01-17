@@ -9,9 +9,13 @@ import chaiAsPromised from 'chai-as-promised';
 import chaiDom from 'chai-dom';
 import sinonChai from 'sinon-chai';
 
+import RafSchedulerRegisterWaiter from 'ember-raf-scheduler/test-support/register-waiter';
+
 chai.use(chaiAsPromised);
 chai.use(chaiDom);
 chai.use(sinonChai);
+
+RafSchedulerRegisterWaiter();
 
 setApplication(Application.create(config.APP));
 

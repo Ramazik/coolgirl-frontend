@@ -6,8 +6,8 @@ module.exports = function (environment) {
 
     modulePrefix: 'coolgirl-frontend',
     podModulePrefix: 'coolgirl-frontend/pods',
-    rootURL: process.env.EMBER_GH_PAGES ? '/coolgirl-frontend/' : '/',
-    locationType: process.env.EMBER_GH_PAGES ? 'hash' : 'auto',
+    rootURL: process.env.EMBER_GH_PAGES === 'true' ? '/coolgirl-frontend/' : '/',
+    locationType: process.env.EMBER_GH_PAGES === 'true' ? 'hash' : 'auto',
     apiNamespace: process.env.EMBER_API_NAMESPACE || '',
     apiHost: process.env.EMBER_API_HOST || '',
 

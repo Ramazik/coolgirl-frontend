@@ -17,6 +17,7 @@
     <nav class="Page-Application-Header-Nav" {{element-query}}>
       <LinkTo
         class="Page-Application-Header-Nav-Link link"
+        data-test-link="home"
         @route="index"
       >
         {{t "page.application.nav.index"}}
@@ -24,6 +25,7 @@
 
       <LinkTo
         class="Page-Application-Header-Nav-Link link"
+        data-test-link="games"
         @route="games"
       >
         {{t "page.application.nav.games"}}

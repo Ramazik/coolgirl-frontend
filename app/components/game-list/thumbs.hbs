@@ -2,6 +2,9 @@
   class="
     GameList_Thumbs
   "
+
+  data-test-thumbs-view
+
   ...attributes
   as |EQ|
 >
@@ -49,9 +52,13 @@
       as |gameWrapper index|
     >
     {{!-- {{#each this.games.gameWrappers as |gameWrapper|}} --}}
-      <tr class="GameList_Thumbs-Row _body  _{{oddity index}}">
+      <tr
+        class="GameList_Thumbs-Row _body  _{{oddity index}}"
+        data-test-game
+      >
         <td class="GameList_Thumbs-Cell _body _check">
           <input
+            data-test-checkbox
             type="checkbox"
             checked={{gameWrapper.isSelected}}
             {{on "change" gameWrapper.toggle}}
@@ -61,6 +68,7 @@
         <td class="GameList_Thumbs-Cell _body _thumb">
           <img
             class="GameList_Thumbs-Thumb"
+            data-test-screenshot
             src={{url gameWrapper.game.screenshot}}
             alt={{gameWrapper.game.name}}
             loading="lazy"
@@ -69,12 +77,17 @@
         </td>
 
         <td class="GameList_Thumbs-Cell _body _name">
-          <p class="GameList_Thumbs-Name">
+          <p
+            class="GameList_Thumbs-Name"
+            data-test-name
+          >
             {{gameWrapper.name}}
           </p>
+
           <p
             class="GameList_Thumbs-Desc"
             title={{gameWrapper.game.description}}
+            data-test-description
           >
             {{gameWrapper.game.description}}
           </p>
@@ -88,15 +101,14 @@
           </p>
 
           {{#if gameWrapper.game.battery}}
-            <p>
+            <p data-test-battery>
               {{! template-lint-disable no-bare-strings}}
               🔋
             </p>
           {{/if}}
 
-          <p>
-            {{! template-lint-disable no-bare-strings}}
-            {{gameWrapper.game.size}} KB
+          <p data-test-size>
+            {{t "page.games.size" size=gameWrapper.game.size}}
           </p>
         </td>
       </tr>

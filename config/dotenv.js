@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const DEFAULT_DOTENV_NAME = 'new-normal';
+const DEFAULT_DOTENV_NAME = 'new-dev';
 
 module.exports = function (/* env */) {
   const dotenvName =

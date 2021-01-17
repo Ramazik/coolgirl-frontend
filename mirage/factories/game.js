@@ -15,4 +15,18 @@ export default Factory.extend({
   size: null,
   tag: null,
   webm: null,
+
+  // aka:         (i) => `aka ${i + 1}`,
+  // battery:     (i) => `battery ${i + 1}`,
+  // description: (i) => `description ${i + 1}`,
+  // gif:         (i) => `gif ${i + 1}`,
+  // is_default:  (i) => `is_default ${i + 1}`,
+  // language:    (i) => `language ${i + 1}`,
+  // mapper:      (i) => `mapper ${i + 1}`,
+  // mp4:         (i) => `mp4 ${i + 1}`,
+  // name:        (i) => `name ${i + 1}`,
+  // screenshot:  (i) => `screenshot ${i + 1}`,
+  // size:        (i) => `size ${i + 1}`,
+  // tag:         (i) => `tag ${i + 1}`,
+  // webm:        (i) => `webm ${i + 1}`,
 });
