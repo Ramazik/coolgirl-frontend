@@ -4,12 +4,11 @@ import config from 'coolgirl-frontend/config/environment';
 import { ApiGames, GameObj } from 'coolgirl-frontend/types';
 import { dropTask } from 'ember-concurrency-decorators';
 import { taskFor } from 'ember-concurrency-ts';
+import Ember from 'ember';
 
 export default class FetchService extends Service {
   get host(): string {
-    return config.environment === 'testing' || window.location.pathname === '/tests'
-      ? ''
-      : config.apiHost;
+    return Ember.testing ? '' : config.apiHost;
   }
 
   get baseURL(): string {
