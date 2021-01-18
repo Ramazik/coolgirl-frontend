@@ -44,7 +44,8 @@
       }}
 
       @containerSelector="body"
-      @bufferSize={{5}}
+      @bufferSize={{50}}
+      @renderAll={{not @isVirtualScrollingEnabled}}
       as |gameWrapper index|
     >
       <tr class="GameList_Compact-Row _body _{{oddity index}}">

@@ -19,10 +19,16 @@ export default class Games extends Controller {
 
   viewModes = Object.values(ViewMode);
   @tracked viewMode: ViewMode = ViewMode.Thumbnails;
+  @tracked isVirtualScrollingEnabled = true;
 
   @action
   setViewMode(viewMode: ViewMode): void {
     this.viewMode = viewMode;
+  }
+
+  @action
+  setVirtualScrolling(event: Event): void {
+    this.isVirtualScrollingEnabled = !(event.target as HTMLInputElement).checked;
   }
 }
 

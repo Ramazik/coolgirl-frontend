@@ -21,6 +21,7 @@ page:
       compact: Компакт
       thumbnails: Средне
       cards: Крупно
+    in-page-search: Поиск по странице (медленно)
     size: "{size} КиБ"
 
 

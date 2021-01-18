@@ -22,6 +22,16 @@
             {{t (concat "page.games.view-modes." viewMode)}}
           </label>
         {{/each}}
+
+        <label class="Page-Games-Filter-Filter-Item">
+          <input
+            type="checkbox"
+            checked={{not this.isVirtualScrollingEnabled}}
+            {{on "change" this.setVirtualScrolling}}
+          >
+
+          {{t "page.games.in-page-search"}}
+        </label>
       </div>
     </div>
   </div>
@@ -48,13 +58,16 @@
 
       {{#if (eq this.viewMode "compact")}}
         <GameList::Compact
+          @isVirtualScrollingEnabled={{this.isVirtualScrollingEnabled}}
         />
 
       {{else if (eq this.viewMode "thumbnails")}}
         <GameList::Thumbs
+          @isVirtualScrollingEnabled={{this.isVirtualScrollingEnabled}}
         />
       {{else}}
         <GameList::Cards
+          @isVirtualScrollingEnabled={{this.isVirtualScrollingEnabled}}
         />
       {{/if}}
     {{else}}

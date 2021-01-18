@@ -21,6 +21,7 @@ page:
       compact: Compact
       thumbnails: Thumbs
       cards: Cards
+    in-page-search: In-page search (slow)
     size: "{size} KiB"
 
 

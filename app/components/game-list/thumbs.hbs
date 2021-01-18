@@ -48,7 +48,8 @@
       }}
 
       @containerSelector="body"
-      @bufferSize={{5}}
+      @bufferSize={{50}}
+      @renderAll={{not @isVirtualScrollingEnabled}}
       as |gameWrapper index|
     >
     {{!-- {{#each this.games.gameWrappers as |gameWrapper|}} --}}
@@ -71,7 +72,7 @@
             data-test-screenshot
             src={{url gameWrapper.game.screenshot}}
             alt={{gameWrapper.game.name}}
-            loading="lazy"
+            loading={{unless @isVirtualScrollingEnabled "lazy"}}
             {{img-loading gameWrapper.game.screenshot}}
           >
         </td>

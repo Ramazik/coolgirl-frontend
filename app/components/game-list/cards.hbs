@@ -17,7 +17,8 @@
     @key="firstObject.name"
     @estimateHeight={{350}}
     @containerSelector="body"
-    @bufferSize={{5}}
+    @bufferSize={{30}}
+    @renderAll={{not @isVirtualScrollingEnabled}}
     as |gamesWrappers|
   >
   {{!-- {{#each (group-by-eq
@@ -39,7 +40,7 @@
               data-test-screenshot
               src={{url game.screenshot}}
               alt={{game.name}}
-              loading="lazy"
+              loading={{unless @isVirtualScrollingEnabled "lazy"}}
               {{img-loading game.screenshot}}
             >
 
